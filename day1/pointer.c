@@ -23,6 +23,10 @@ void* func3(){
 void func4(char* p){//即p=buf4
 	p="hello3";//p不再指向hhhhh,而是指向hello3(浅拷贝)
 }//p被释放
+void func5(char* p){
+	memset(p,0,10);
+	strcpy(p,"hello4");//p指向拷贝在main栈区的hello4(深拷贝)
+}
 int main(){
 	char* buf;
 	char* buf1=func1();//buf1指向常量区hello
@@ -32,11 +36,14 @@ int main(){
     buf3=func3();//buf3指向已释放的栈区
 	char* buf4="hhhhh";
 	func4(buf4);//p的修改与buf4无关
+	char buf5[10];
+	func5(buf5);
 	printf("%s\n",buf);//hello world
 	printf("%s\n",buf1);//hello
 	printf("%s\n",buf2);//hello1
 	//printf("%s\n",buf3);//buf3为野指针
 	printf("%s\n",buf4);//hhhhh
+	printf("%s\n",buf5);//hello4
 	free(buf2);
 	buf2=NULL;
 	return 0;
