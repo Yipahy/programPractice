@@ -37,12 +37,16 @@ int main(){
 	func4(buf4);//p的修改与buf4无关
 	char buf5[10]="lllll";
 	func5(buf5);
+	char buf6[10]="nnnnnnnn";
+	char* tmp=buf6;
+	strcpy(tmp,"hello5");
 	printf("%s\n",buf);//hello world
 	printf("%s\n",buf1);//hello
 	printf("%s\n",buf2);//hello1
 	//printf("%s\n",buf3);//buf3为野指针
 	printf("%s\n",buf4);//hhhhh
 	printf("%s\n",buf5);//hello4
+	printf("%s\n",buf6);//hello5
 	free(buf2);
 	buf2=NULL;
 	return 0;
