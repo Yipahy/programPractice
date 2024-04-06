@@ -1,5 +1,5 @@
 #include <stdio.h>
 extern int c;
-void test(){
+extern void test(){
 	printf("%d\n",c);
 }

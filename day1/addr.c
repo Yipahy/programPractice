@@ -1,5 +1,6 @@
 #include <stdio.h>
 int c=255;
+extern test();
 int main()
 {
 	int a=0x11223344;

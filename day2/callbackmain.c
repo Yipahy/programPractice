@@ -1,4 +1,5 @@
 #include "callback.h"
+#include "callbacktest.hpp"
 
 int main()
 {
@@ -14,6 +15,7 @@ int main()
 	printf("%s\n",__DATE__);
 	printf("%s\n",__TIME__);
 	printf("%d\n",__LINE__);
+	test();
 	return 0;
 }
 
