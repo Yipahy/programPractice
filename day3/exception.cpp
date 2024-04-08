@@ -3,6 +3,7 @@
  */
 #include <iostream>
 #include <stdexcept>
+#include <unistd.h>
 class Father
 {
 	public:
@@ -82,5 +83,6 @@ int main()
 	}
 	stdexcepttest();//年龄不在正常范围内
 	ff.print();
+	sleep(100);
 	return 0;
 }
